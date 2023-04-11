@@ -15,6 +15,7 @@ Mi bomo uporabljali podatke o umorih v ZDA, zločinah iz sovraštva v ZDA in pos
 - USA Homicides 1976-2020: https://www.kaggle.com/datasets/stephanieblack1990/usa-homicides-19762020?select=SHR76_20StephanieBlack.xlsx
 - United States Hate Crimes (1991-2018): https://www.kaggle.com/datasets/louissebye/united-states-hate-crimes-19912017
 - Guns per Capita 2023: https://worldpopulationreview.com/state-rankings/guns-per-capita
+- 2019 Census US Population Data By State: https://www.kaggle.com/datasets/peretzcohen/2019-census-us-population-data-by-state
 
 ## Cilj
 

@@ -88,4 +88,27 @@ fig = px.choropleth(merged_df,
 ![alt text](./map_na_glava_zitel.png)
 <br />
 Ker iz slike ne moremo ugotoviti katera država ima največ umorov, smo morali pogledati še en graf in smo ugotovili da ta država je "District of Columbia".
-##
+
+##Ali lastništvo orožja vpliva na stopnjo umorov v posameznih državah?
+Najprej smo izračunali, katero orožje se najpogosteje uporablja pri umorih. Iz teh analiz, firearms so bili najštevilčnejši. Zato smo hoteli preveriti ali obstaja korelacija med število lastništva orožja in število umorov v posamezni državi. 
+```python
+df_guns_sorted = df_guns.sort_values(by="pop2023", ascending=False)
+df_guns_sorted["gun_ownership"] = df_guns_sorted["gunsRegistered"] / df_guns_sorted["pop2023"] * 100
+guns_precentage = df_guns_sorted.sort_values(by="gun_ownership", ascending=False).head(50)
+guns_per_state = df_guns.groupby("state")["gunsRegistered"].sum().sort_values(ascending=False)
+```
+![alt text](./"stevilo_posedovanosti.png")
+<br />
+```python
+homocides_per_capita = (df_homicides.groupby("State")["ID"].count() / df_guns.set_index("state")["pop2023"]) * 100000
+homocides_per_capita = homocides_per_capita.sort_values(ascending=False).head(50)
+common_states = set(guns_precentage["state"]).intersection(set(homocides_per_capita.index))
+gun_ownership_per_capita = guns_precentage[guns_precentage["state"].isin(common_states)]['gun_ownership']
+homicides_per_capita = homocides_per_capita[homocides_per_capita.index.isin(common_states)]
+gun_ownership_per_capita = np.array(gun_ownership_per_capita)
+homicides_per_capita = np.array(homicides_per_capita)
+correlation_coefficient = np.corrcoef(gun_ownership_per_capita, homicides_per_capita)[0, 1]
+print(correlation_coefficient)
+``` 
+Potem smo izračunali še korelacijski koeficient in smo dobili **0.7109630367945233**, kar pomeni, da obstaja precej visoka korelacija med tema dvema.
+

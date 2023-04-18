@@ -89,7 +89,7 @@ fig = px.choropleth(merged_df,
 <br />
 Ker iz slike ne moremo ugotoviti katera država ima največ umorov, smo morali pogledati še en graf in smo ugotovili da ta država je "District of Columbia".
 
-##Ali lastništvo orožja vpliva na stopnjo umorov v posameznih državah?
+### Ali lastništvo orožja vpliva na stopnjo umorov v posameznih državah?
 Najprej smo izračunali, katero orožje se najpogosteje uporablja pri umorih. Iz teh analiz, firearms so bili najštevilčnejši. Zato smo hoteli preveriti ali obstaja korelacija med število lastništva orožja in število umorov v posamezni državi. 
 ```python
 df_guns_sorted = df_guns.sort_values(by="pop2023", ascending=False)

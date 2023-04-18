@@ -40,7 +40,7 @@ Vprašanja, ki jih bomo obdelovali:
 - Katera okolščina največ pripelje do umorov in kakšno srodstvo sta imela morilec in žrtev?
 - Analiza razrešitev umora in ali tip agencije vpliva na razrešitvi umora?
 
-###Žačeli bomo z analizo umorov v posamezni zvezni državi
+##Žačeli bomo z analizo umorov v posamezni zvezni državi
 ```python
 murders_by_state = df_homicides.groupby("State")["ID"].count().reset_index()
 murders_by_state.columns = ["State", "Murders"]
@@ -61,6 +61,7 @@ fig = px.choropleth(murders_by_state,
                     title='Murders per State')
 ```
 ![alt text](./map_bez_na_glava_zitel.png)
+<br />
 Iz slike je očitno da največ umorov so v Kaliforniji, vnedar če hočemo biti bolj natančne moramo preračunati število umorov na 100.000 prebivalcev.
 ```python
 murders_by_state = df_homicides.groupby("State")["ID"].count().reset_index()
@@ -84,6 +85,7 @@ fig = px.choropleth(merged_df,
                     range_color=(0, merged_df['Murder Rate'].max()),
                     title='Murder Rate per State')
 ```
-![alt text](./map_na_glava_zitel.png.png)
+![alt text](./map_na_glava_zitel.png)
+<br />
 Ker iz slike ne moremo ugotoviti katera država ima največ umorov, smo morali pogledati še en graf in smo ugotovili da ta država je "District of Columbia".
 ##

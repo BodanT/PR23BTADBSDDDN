@@ -112,3 +112,32 @@ print(correlation_coefficient)
 ``` 
 Potem smo izračunali še korelacijski koeficient in smo dobili **0.7109630367945233**, kar pomeni, da obstaja precej visoka korelacija med tema dvema.
 
+##Analiza karakteristik morilca in žrtev
+![alt text](./"karakteristike_morilca.png")
+<br />
+Iz analize lahko vidimo, da je večina morilcev moških in zelo majhen odstotek žensk. Kar zadeva starostni razpon, vidimo, da je večina morilcev starih od 20 do 30 let in je majhen odstotek otrok med morilci od 0 do 10 let. Končno, rasa večine morilcev je tipično belci, ki jim tesno sledijo Afroameričani in velik upad Azijcev in drugih.
+![alt text](./"karakteristike_zrtev.png")
+<br />
+Iz analize podatkov o žrtvah lahko vidimo, da je tako kot morilcev veliko število žrtev moških, medtem ko je žrtev žensk manj, a še vedno veliko. Kar zadeva starost žrtev, je najpogosteje od 20 do 30 let, medtem ko je zelo žalostna statistika število žrtev od 0 do 10 in 10 do 20 let. In končno, rasa žrtev je najpogosteje belci, zelo blizu pa jim sledijo Afroameričani.
+
+##Katera okolščina največ pripelje do umorov in kakšno srodstvo sta imela morilec in žrtev?
+```python
+circumstance_relationship_count = df_homicides.groupby(['Circumstance', 'Relationship'])['Relationship'].count().unstack()
+circumstance_relationship_count['Family_member'] = circumstance_relationship_count[['Brother', 'Sister','Common-law husband','Common-law wife', 'Daughter', 'Other family','Son', 'Stepdaughter','Stepfather','Stepmother','Stepson','Wife']].sum(axis=1)
+circumstance_relationship_count['Acquaintance'] = circumstance_relationship_count[['Acquaintance', 'Employee', 'Employer']].sum(axis=1)
+circumstance_relationship_count['Ex-spouse'] = circumstance_relationship_count[['Ex-wife', 'Ex-husband']].sum(axis=1)
+circumstance_relationship_count['Partner'] = circumstance_relationship_count[['Boyfriend', 'Girlfriend', 'Homosexual relationship']].sum(axis=1)
+
+labels = circumstance_relationship_count.index
+x = np.arange(len(labels))
+width = 0.25
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(14, 9))
+fig.subplots_adjust(wspace=0.4)
+```
+![alt text](./"relationship+circumstance.png")
+
+
+
+
+

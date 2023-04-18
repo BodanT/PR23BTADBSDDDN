@@ -40,7 +40,7 @@ Vprašanja, ki jih bomo obdelovali:
 - Katera okolščina največ pripelje do umorov in kakšno odnos sta imela morilec in žrtev?
 - Analiza razrešitev umora in ali tip agencije vpliva na razrešitvi umora?
 
-##Žačeli bomo z analizo umorov v posamezni zvezni državi
+### Žačeli bomo z analizo umorov v posamezni zvezni državi
 ```python
 murders_by_state = df_homicides.groupby("State")["ID"].count().reset_index()
 murders_by_state.columns = ["State", "Murders"]
@@ -112,7 +112,7 @@ print(correlation_coefficient)
 ``` 
 Potem smo izračunali še korelacijski koeficient in smo dobili **0.7109630367945233**, kar pomeni, da obstaja precej visoka korelacija med tema dvema.
 
-##Analiza karakteristik morilca in žrtev
+### Analiza karakteristik morilca in žrtev
 ![alt text](./karakteristike_morilca.png)
 <br />
 Iz analize lahko vidimo, da je večina morilcev moških in zelo majhen odstotek žensk. Kar zadeva starostni razpon, vidimo, da je večina morilcev starih od 20 do 30 let in je majhen odstotek otrok med morilci od 0 do 10 let. Končno, rasa večine morilcev je tipično belci, ki jim tesno sledijo Afroameričani in velik upad Azijcev in drugih.
@@ -121,7 +121,7 @@ Iz analize lahko vidimo, da je večina morilcev moških in zelo majhen odstotek 
 <br />
 Iz analize podatkov o žrtvah lahko vidimo, da je tako kot morilcev veliko število žrtev moških, medtem ko je žrtev žensk manj, a še vedno veliko. Kar zadeva starost žrtev, je najpogosteje od 20 do 30 let, medtem ko je zelo žalostna statistika število žrtev od 0 do 10 in 10 do 20 let. In končno, rasa žrtev je najpogosteje belci, zelo blizu pa jim sledijo Afroameričani.
 
-##Katera okolščina največ pripelje do umorov in kakšen odnos sta imela morilec in žrtev?
+### Katera okolščina največ pripelje do umorov in kakšen odnos sta imela morilec in žrtev?
 
 Pri analizi, smo prešteli umore pri posmaezni okolščini in hkrati smo pregledali kakšen je bil odnos med 
 udeleženci umora.
@@ -144,7 +144,7 @@ fig.subplots_adjust(wspace=0.4)
 <br />
 Iz grfa lahko sklepamo da "Other-Arguments" (prepir) največ pripelje do umorov. Pri tem, odnos med morilcem in žrtvo je "Acquaintance" oziroma znanec.
 
-##Analiza razrešitev umora in tip agencije
+### Analiza razrešitev umora in tip agencije
 Za vasko agencijo, ki je obdelavala umor, smo prešteli koliko umorov je razrešila, a koliko ne.
 ```python
 df_homicides_smeneto = df_homicides[df_homicides['Agentype'] != '4']

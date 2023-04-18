@@ -1,4 +1,4 @@
-# Umorov in napadov v ZDA
+# Umori in napadi v ZDA
 ## Člani skupine
 
 | Ime in priimek | Vpisna številka |

@@ -113,11 +113,10 @@ print(correlation_coefficient)
 Potem smo izračunali še korelacijski koeficient in smo dobili **0.7109630367945233**, kar pomeni, da obstaja precej visoka korelacija med tema dvema.
 
 ##Analiza karakteristik morilca in žrtev
-<br />
 ![alt text](./"karakteristike_morilca.png")
 <br />
 Iz analize lahko vidimo, da je večina morilcev moških in zelo majhen odstotek žensk. Kar zadeva starostni razpon, vidimo, da je večina morilcev starih od 20 do 30 let in je majhen odstotek otrok med morilci od 0 do 10 let. Končno, rasa večine morilcev je tipično belci, ki jim tesno sledijo Afroameričani in velik upad Azijcev in drugih.
-<br />
+
 ![alt text](./"karakteristike_zrtev.png")
 <br />
 Iz analize podatkov o žrtvah lahko vidimo, da je tako kot morilcev veliko število žrtev moških, medtem ko je žrtev žensk manj, a še vedno veliko. Kar zadeva starost žrtev, je najpogosteje od 20 do 30 let, medtem ko je zelo žalostna statistika število žrtev od 0 do 10 in 10 do 20 let. In končno, rasa žrtev je najpogosteje belci, zelo blizu pa jim sledijo Afroameričani.
@@ -140,7 +139,7 @@ width = 0.25
 fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(14, 9))
 fig.subplots_adjust(wspace=0.4)
 ```
-<br />
+
 ![alt text](./"relationship+circumstance.png")
 <br />
 Iz grfa lahko sklepamo da "Other-Arguments" (prepir) največ pripelje do umorov. Pri tem, odnos med morilcem in žrtvo je "Acquaintance" oziroma znanec.
@@ -155,7 +154,7 @@ agent_type_counts = df_homicides_smeneto['Agentype'].value_counts()
 agent_type_stats = df_homicides_smeneto.groupby(['Agentype', 'Solved']).size().unstack().reset_index()
 contingency_table = pd.crosstab(df_homicides_smeneto['Agentype'], df_homicides_smeneto['Solved'])
 ```
-<br />
+
 ![alt text](./"agency.png")
 <br />
 Iz slike lahko sklepamo, da je bila večina umorov rešenih, želeli pa smo ugotoviti, ali obstaja povezava med vrsto agencije in rešitvijo umora.

@@ -157,6 +157,7 @@ contingency_table = pd.crosstab(df_homicides_smeneto['Agentype'], df_homicides_s
 
 ![alt text](./agency.png)
 <br />
+
 Iz slike lahko sklepamo, da je bila večina umorov rešenih, želeli pa smo ugotoviti, ali obstaja povezava med vrsto agencije in rešitvijo umora.
 ```python
 contingency_table = pd.crosstab(df_homicides_smeneto['Agentype'], df_homicides_smeneto['Solved'])
